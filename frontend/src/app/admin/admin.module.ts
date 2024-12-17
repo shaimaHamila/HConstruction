@@ -18,6 +18,7 @@ import { en_US, NZ_I18N } from 'ng-zorro-antd/i18n';
     NzLayoutModule,
     NzMenuModule,
   ],
+  exports: [AdminComponent],
   providers: [
     { provide: NZ_I18N, useValue: en_US },
     provideAnimationsAsync(),

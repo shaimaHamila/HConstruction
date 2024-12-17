@@ -8,7 +8,7 @@ import { WebsiteComponent } from './website.component';
 import { HeaderComponent } from './components/header/header.component';
 import { OffersComponent } from './components/offers/offers.component';
 import { AboutComponent } from './components/about/about.component';
-import { ServicesComponent } from './components/services/services.component';
+import { ServicesComponent } from './components/services_component/services.component';
 import { CountersComponent } from './components/counters/counters.component';
 import { TeamComponent } from './components/team/team.component';
 import { FooterComponent } from './components/footer/footer.component';

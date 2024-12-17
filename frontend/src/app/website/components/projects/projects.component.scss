@@ -25,6 +25,9 @@
   justify-content: center;
   margin-bottom: 20px;
 }
+.action__btn a:hover {
+  color: #1f2d30;
+}
 .section__title h2.title__line {
   color: #1f2d30;
   font-size: 40px;
@@ -210,9 +213,6 @@
   }
 
   .container-fluid .section__title p {
-    width: 69%;
-  }
-  .section__title p {
     width: 69%;
   }
   .section__title p {

@@ -16,6 +16,8 @@ import { ProjectsPageComponent } from './pages/projects/projects-page.component'
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -34,7 +36,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ProjectsComponent,
     ContactFormComponent,
   ],
-  imports: [CommonModule, FontAwesomeModule],
+  imports: [CommonModule, FontAwesomeModule, NzButtonModule],
   exports: [HomeComponent, WebsiteComponent],
 })
 export class WebsiteModule {}

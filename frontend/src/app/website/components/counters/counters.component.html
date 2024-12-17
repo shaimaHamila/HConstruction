@@ -1,79 +1,40 @@
 <section class="htc__counterup__area count--2 h1__countdown bg__gray">
     <div class="container-fluid">
         <div class="row">
+            <!-- Left Image Section -->
             <div class="col-md-4 col-sm-12 col-xs-12">
                 <div class="counterup__left__thumb">
-                    <img src="assets/about/4.png" alt="images">
+                    <img src="assets/about/4.png" alt="Company Image">
                 </div>
             </div>
-            <div class="col-md-8 col-sm-12 col-xs-12">
+
+            <!-- Right Content Section -->
+            <div class="col-md-8 col-sm-12 col-xs-12 counterup-right-section">
+                <!-- Call to Action Section -->
                 <div class="htc__callto__action">
-                    <h2># BEST <span class="text--theme">CONSTRUCTION</span> THEME</h2>
-                    <p>On the other hand, we denounce with righteous indignation and dislike men who are so
-                        beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire,
-                        that they cannot foresee the pain and trouble</p>
-                    <div class="htc__call__btn">
-                        <a class="htc__btn" href="#">BUY NOW</a>
+                    <h2># BEST <span class="text--theme">CONSTRUCTION</span> Company</h2>
+                    <p>{{ companyDescription }}</p>
+                    <div class="action__btn">
+                        <a href="#">Contact us</a>
                     </div>
                 </div>
+
+                <!-- Counters Section -->
                 <div class="htc__counterup__wrap"
-                    style="background: rgba(0, 0, 0, 0) url(assets/bg/10.png) no-repeat scroll center center / cover ;">
-                    <!-- Start Single Fact -->
-                    <div class="funfact">
+                    style="background: rgba(0, 0, 0, 0) url(assets/bg/10.png) no-repeat scroll center center / cover;">
+                    <!-- Loop through counters -->
+                    <div *ngFor="let counter of counters" class="funfact col-md-3 col-sm-6 col-xs-12">
                         <div class="fact__details">
                             <div class="funfact__count__inner">
-                                <div class="fact__count ">
-                                    <span class="count">598</span>
+                                <div class="fact__count">
+                                    <span class="count">{{ counter.count }}</span>
                                 </div>
                             </div>
                             <div class="fact__title">
-                                <h2>PROJECTS</h2>
+                                <h2>{{ counter.title }}</h2>
                             </div>
                         </div>
                     </div>
-                    <!-- End Single Fact -->
-                    <!-- Start Single Fact -->
-                    <div class="funfact hidden-md">
-                        <div class="fact__details">
-                            <div class="funfact__count__inner">
-                                <div class="fact__count ">
-                                    <span class="count">128</span>
-                                </div>
-                            </div>
-                            <div class="fact__title">
-                                <h2>CLIENTS</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Fact -->
-                    <!-- Start Single Fact -->
-                    <div class="funfact">
-                        <div class="fact__details">
-                            <div class="funfact__count__inner">
-                                <div class="fact__count ">
-                                    <span class="count">339</span>
-                                </div>
-                            </div>
-                            <div class="fact__title">
-                                <h2>SUCCESS</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Fact -->
-                    <!-- Start Single Fact -->
-                    <div class="funfact">
-                        <div class="fact__details">
-                            <div class="funfact__count__inner">
-                                <div class="fact__count ">
-                                    <span class="count">109</span>
-                                </div>
-                            </div>
-                            <div class="fact__title">
-                                <h2>AWARDS</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Fact -->
                 </div>
             </div>
         </div>

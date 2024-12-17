@@ -1,127 +1,16 @@
-/*-----------------------------------------------------------------------------------
-  Template Name: Simply Construction HTML Template.
-  Template URI: #
-  Description: Simply Construction is a unique website template designed in HTML with a simple & beautiful look. There is an excellent solution for creating clean, wonderful and trending material design corporate, corporate any other purposes websites.
-  Author: DevItems
-  Version: 1.0
--------------------------------------------------------------------------------------*/
-/*
-
-
-    font-family: 'Raleway', sans-serif;
-
-    font-family: 'Open Sans', sans-serif;
-
-
-
-*/
-/*-----------------------------
-	Footer Default
-------------------------------*/
-
 .htc__footer__wrap {
   position: relative;
   z-index: 2;
 }
 
-.ht__address__inner {
-  display: flex;
-}
-.ht__address__details p {
-  color: #fafafa;
-  font-size: 16px;
-  font-weight: 500;
-}
-.ht__address__icon i {
-  border: 1px solid #fafafa;
-  border-radius: 100%;
-  color: #fafafa;
-  font-size: 24px;
-  height: 45px;
-  line-height: 45px;
-  text-align: center;
-  transition: all 0.4s ease 0s;
-  width: 45px;
-}
-
-.ht__address__icon.map-pin i {
-  line-height: 43px;
-}
-
-.ht__address__icon.glob i {
-  line-height: 43px;
-}
-
-.ht__address__details {
-  margin-top: -2px;
-}
-.htc__contact__address {
-  padding: 56px 0;
-}
-.ht__address__icon {
-  margin-right: 20px;
-  min-width: 47px;
-}
-.ht__address__inner:hover .ht__address__icon i {
-  background: #fcc236 none repeat scroll 0 0;
-  border: 1px solid #fcc236;
-  color: #fff;
-}
-.htc__contact__wrap {
-  display: flex;
-  justify-content: space-between;
-}
-
-.ft__title {
-  color: #ffffff;
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 28px;
-  text-transform: uppercase;
-}
-.ft__details p {
-  color: #fff;
-  font-size: 14px;
-}
-.footer__link {
-  display: flex;
-}
-.ft__menu li a {
-  color: #ffffff;
-  font-size: 14px;
-  transition: 0.4s;
-}
-.ft__menu li a:hover {
-  color: #fcc236;
-}
-.footer__link ul.ft__menu + ul.ft__menu {
-  margin-left: 30px;
-}
-.ft__menu li + li {
-  padding-top: 13px;
-}
-.footer__instagram {
-  display: flex;
-  flex-flow: row wrap;
-  margin-left: -5px;
-  margin-right: -6px;
-}
-.footer__instagram li {
-  margin-bottom: 10px;
-  padding: 0 5px;
-  width: 33.33%;
-}
-.footer__instagram li a img {
-  width: 100%;
-}
 .copyright {
-  padding: 15px 0;
+  padding: 0;
   text-align: center;
 }
 .copyright__inner p {
   color: #1f2d30;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 500;
 }
 .copyright__inner p a {
   color: #1f2d30;
@@ -137,35 +26,144 @@
   position: relative;
 }
 
-/*---------------------------------------
-  14. Google Map Area
-----------------------------------------*/
+/* Basic Styles */
+footer {
+  background-color: #111; /* Background color */
+  color: #fff; /* Text color */
+}
 
-.map-contacts {
-  position: relative;
+footer h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: var(--primary-500);
 }
-#googleMap {
-  height: 436px;
-  width: 100%;
+
+footer .ft__details p,
+footer .ft__menu li {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #fff;
 }
-.htc__contact__address--2 {
-  background: rgba(31, 45, 48, 0.92) none repeat scroll 0 0;
-  bottom: 0;
-  position: absolute;
-  right: 18%;
+
+footer .ft__menu li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
-.htc__contact__address--2 .map-contacts {
-  position: relative;
+
+footer .ft__menu li a:hover {
+  color: #f1c40f; /* Highlight color on hover */
 }
-.htc__contact__address--2 .htc__contact__wrap {
-  display: block;
+
+footer .ft__details a {
+  color: #fff;
+  text-decoration: none;
 }
-.htc__contact__address--2 .htc__contact__wrap {
-  padding: 0 40px;
+
+footer .footer__top {
+  background-size: cover;
+  background-position: center;
 }
-.htc__contact__address--2
-  .htc__contact__wrap
-  .ht__address__inner
-  + .ht__address__inner {
-  margin-top: 40px;
+
+/* Container and Grid Layout */
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+footer .htc__footer__wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+footer .footer {
+  padding: 20px;
+  flex: 1;
+}
+
+footer .footer__widget {
+  margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
+}
+@media (max-width: 1199px) {
+  footer .htc__footer__wrap {
+    flex-direction: column;
+  }
+
+  footer .footer {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 991px) {
+  footer .footer__top {
+    padding-top: 80px;
+    padding-bottom: 50px;
+  }
+
+  footer .footer__widget {
+    text-align: center;
+  }
+
+  footer .footer .ft__details p {
+    font-size: 16px;
+  }
+
+  footer .ft__menu li {
+    text-align: center;
+  }
+
+  footer .ft__menu li a {
+    display: inline-block;
+    margin: 10px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  footer .footer {
+    padding: 15px;
+  }
+
+  footer .ft__details p {
+    font-size: 14px;
+  }
+
+  footer .footer__widget {
+    margin-bottom: 20px;
+  }
+
+  footer .ft__menu li a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  footer .footer__top {
+    padding-top: 50px;
+    padding-bottom: 30px;
+  }
+
+  footer h2 {
+    font-size: 16px;
+  }
+
+  footer .footer__details p {
+    font-size: 12px;
+  }
+
+  footer .ft__menu li a {
+    font-size: 12px;
+  }
+
+  footer .copyright {
+    text-align: center;
+  }
 }

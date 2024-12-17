@@ -1,0 +1,128 @@
+/*---------------------------------------
+  08. Team Area
+----------------------------------------*/
+
+.team__inner {
+  position: relative;
+}
+.team__hover__info {
+  background: rgba(252, 194, 54, 0.85) none repeat scroll 0 0;
+  bottom: 0;
+  left: 0;
+  padding: 25px 0;
+  position: absolute;
+  transform: scaleY(0);
+  transform-origin: center bottom 0;
+  transition: all 0.5s ease 0s;
+  width: 100%;
+}
+.team__social__link {
+  display: flex;
+  justify-content: center;
+}
+.team__social__link li a {
+  color: #000;
+}
+.team__social__link li {
+  margin: 0 13px;
+}
+.team__social__link li a i {
+  background: #fff none repeat scroll 0 0;
+  border-radius: 100%;
+  color: #fcc236;
+  font-size: 12px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  transition: all 0.4s ease 0s;
+  width: 30px;
+}
+.team__social__link li a:hover i {
+  background: #000 none repeat scroll 0 0;
+  color: #fff;
+}
+.team__details {
+  background: #1f2d30 none repeat scroll 0 0;
+  border-top: 1px solid #ffffff;
+  padding: 23px 0;
+  text-align: center;
+  transition: all 0.5s ease 0s;
+}
+.team__details h2 a {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+.team__details h2 {
+  line-height: 14px;
+}
+.team__details h2 a:hover {
+  color: #000;
+}
+.team__details h4 {
+  color: #ffffff;
+  font-family: Open Sans;
+  font-weight: 300;
+  margin-top: 10px;
+  text-transform: capitalize;
+}
+.team:hover .team__details {
+  background: #fcc236 none repeat scroll 0 0;
+}
+.team:hover .team__hover__info {
+  transform: scaleY(1);
+}
+.htc__team__container {
+  position: relative;
+  z-index: 2;
+}
+.team {
+  margin-top: 30px;
+}
+/*-------------------
+    Team 2
+--------------------*/
+
+.h1__team--one .team__social__link {
+  display: block;
+  margin-top: -15px;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.h1__team--one .team__social__link li {
+  margin: 15px 0;
+}
+.h1__team--one .team__hover__info {
+  bottom: auto;
+  height: 100%;
+  left: 0;
+  padding: 0;
+  top: 0;
+  transform: scaleX(0);
+  width: 85px;
+}
+.h1__team--one .team:hover .team__hover__info {
+  transform: scaleX(1);
+}
+
+.text__pos {
+  position: relative;
+}
+.text__shape {
+  left: 128px;
+  position: absolute;
+  top: 50%;
+}
+.text__shape h2 {
+  color: #f7f7f7;
+  font-family: Josefin Sans;
+  font-size: 120px;
+  font-weight: 700;
+  letter-spacing: 15px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg) translateY(50%) translateX(0);
+}

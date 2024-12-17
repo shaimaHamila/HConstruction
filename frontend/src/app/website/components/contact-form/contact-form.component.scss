@@ -1,0 +1,150 @@
+/*---------------------------------------
+  09. Testimonial Area
+----------------------------------------*/
+
+.reguest__quote,
+.htc__testimonial__wrap {
+  position: relative;
+  z-index: 2;
+}
+.htc__testimonial__area .section__title p {
+  margin-bottom: inherit;
+  margin-left: inherit;
+  margin-right: inherit;
+  margin-top: 20px;
+  width: 100%;
+}
+.htc__testimonial__area .section__title {
+  margin-bottom: 47px;
+}
+.section__title.text-left {
+  margin-bottom: 47px;
+}
+.testimonial {
+  align-items: center;
+  display: flex !important;
+  position: relative;
+}
+.testimonial__thumb img {
+  width: 100%;
+}
+.testimonial__thumb {
+  margin-right: 40px;
+  min-width: 48%;
+}
+.testimonial__activation--2 .testimonial__thumb {
+  margin-right: 25px;
+  min-width: 37%;
+}
+.testimonial__activation--2 .testimonial__details p {
+  font-style: italic;
+  padding-right: 19px;
+}
+.testimonial__details h2 {
+  color: #303030;
+  font-family: Open Sans;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 30px;
+  text-transform: capitalize;
+}
+.testimonial__details h4 {
+  color: #606060;
+  font-family: open sans;
+  font-size: 14px;
+  margin-top: 7px;
+}
+.single__cl__form {
+  display: flex;
+  margin-bottom: 20px;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.single__cl__form input {
+  background: #fff none repeat scroll 0 0;
+  border: 1px solid #e1e1e1;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 15px;
+  padding: 0 20px;
+  width: 50%;
+  color: #606060;
+}
+.single__cl__form input::-moz-placeholder {
+  color: #606060 !important;
+}
+.single__cl__message textarea::-moz-placeholder {
+  color: #606060 !important;
+  opacity: 1;
+}
+.clint__submit__btn a {
+  padding: 0 17px;
+}
+.single__cl__message textarea {
+  background: #fff none repeat scroll 0 0;
+  border: 1px solid #e1e1e1;
+  margin-bottom: 22px;
+  min-height: 155px;
+  padding-left: 20px;
+  padding-top: 12px;
+}
+.htc__testimonial__wrap .slick-dots {
+  bottom: 1px;
+  right: -57px;
+}
+.htc__testimonial__wrap .slick-dots li.slick-active button::before,
+.htc__testimonial__wrap .slick-dots li button:hover::before {
+  background: #fcc236 none repeat scroll 0 0;
+  opacity: 1;
+}
+
+.htc__testimonial__wrap .slick-dots li button::before {
+  background: #000 none repeat scroll 0 0;
+  content: "";
+  height: 10px;
+  opacity: 1;
+  width: 10px;
+  transition: 0.4s;
+}
+.htc__testimonial__wrap .slick-dots li {
+  height: 10px;
+  margin: 0;
+  padding: 0;
+  width: 10px;
+}
+.htc__testimonial__wrap .slick-dots li + li {
+  margin-left: 10px;
+}
+.tes__icon i {
+  color: #c7c0c0;
+  font-size: 18px;
+  margin-bottom: 18px;
+}
+/*----------------------------
+    Testimonial 2
+-----------------------------*/
+
+.htc__testimonial__area.testimonial__2 .section__title p {
+  margin: 0;
+}
+.htc__testimonial__left h2.title__line {
+  color: #1f2d30;
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.htc__testimonial__left p + p {
+  margin-top: 15px;
+}
+.testimonial__2 .htc__testimonial__wrap .slick-dots {
+  bottom: -40px;
+  left: -99%;
+  right: auto;
+}
+.testimonial__2 .htc__testimonial__left p {
+  padding-right: 14px;
+}
+.testimonial__2 .testimonial__details h2 {
+  margin-top: 17px;
+}

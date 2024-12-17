@@ -1,0 +1,51 @@
+<section class="htc__about__area about--2 text__pos ptb--150 bg__white">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="section__title about_section__title text-center">
+                    <h2 class="title__line">
+                        ABOUT <span class="text--theme">SIMPLY</span>
+                    </h2>
+                    <p>
+                        On the other hand, we denounce with righteous indignation and dislike men who are so beguiled
+                        and
+                        demoralized by the charms of pleasure of the moment, so blinded by desire
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row mt--60 about__container">
+            <!-- Iterate over aboutItems -->
+            <div *ngFor="let item of aboutItems; let i = index" class="col-md-4 col-lg-3 col-sm-6 col-xs-12"
+                [ngClass]="{ 'middle': i === 1, 'col-lg-offset-1': i === 0 , 'about-card': true}">
+                <div class="about foo">
+                    <!-- Static view -->
+                    <div class="about__inner" [ngClass]="{ 'active': item.isActive }">
+                        <h2><a>{{ item.title }}</a></h2>
+                        <p>{{ item.description }}</p>
+                        <div class="about__btn">
+                            <!-- <a href="{{ item.link }}">READ MORE</a> -->
+                        </div>
+                        <div class="about__icon">
+                            <img [src]="item.image" alt="icon images" />
+                        </div>
+                    </div>
+                    <!-- Hover view -->
+                    <div class="about__inner about__hober__info" [ngClass]="{ 'active': item.isActive }">
+                        <h2><a>{{ item.title }}</a></h2>
+                        <p>{{ item.description }}</p>
+                        <div class="about__btn">
+                            <!-- <a href="{{ item.link }}">READ MORE</a> -->
+                        </div>
+                        <div class="about__icon">
+                            <img [src]="item.image" alt="icon images" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text__shape">
+        <h2>SIMPLY</h2>
+    </div>
+</section>

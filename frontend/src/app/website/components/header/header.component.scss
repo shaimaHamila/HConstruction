@@ -1,0 +1,166 @@
+/*----------------------------------
+  Header Top Area
+-------------------------------------*/
+.header__top__left {
+  align-items: center;
+  display: flex;
+  height: 45px;
+  margin: 0px;
+  padding: 0px;
+  color: var(--primary-500);
+  font-size: 12px;
+}
+
+/*----------------------------------------
+  Menu basic style
+------------------------------------------*/
+
+.menu__container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+.main__menu,
+.main__menu-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-end;
+  gap: 15px;
+}
+.main__menu > li > a {
+  color: #1f2d30;
+  display: block;
+  font-family: Raleway;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.main__menu > li:hover > a {
+  color: #fcc236;
+}
+.logo {
+  margin: 15px 0px;
+}
+
+.action__btn a {
+  align-items: center;
+  background: var(--primary-500) none repeat scroll 0 0;
+  width: max-content;
+  border-radius: 0.25rem;
+  color: var(--white);
+  font-weight: 700;
+  height: 45px;
+  padding: 0 30px;
+  text-transform: uppercase;
+  transition: all 0.4s ease 0s;
+  display: flex;
+}
+.action__btn a:hover {
+  color: #1f2d30;
+}
+/*-----------------------------------------
+  Sticky  For  Header
+-------------------------------------------*/
+
+.sticky__header.scroll-header {
+  animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
+  background: rgba(255, 255, 255, 0.9) none repeat scroll 0 0;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  left: 0;
+  margin: 0 auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+.sticky__header.scroll-header .logo a img {
+  max-width: 123px;
+}
+.sticky__header.scroll-header .htc__header__search {
+  height: 70px;
+}
+
+.fluid-container.mobile-menu-container {
+  position: relative;
+}
+
+/*-----------------------------
+  Dropdown Menu
+--------------------------------*/
+
+@media (min-width: 1170px) {
+  .main__menu {
+    gap: 30px;
+  }
+}
+
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 1170px) {
+  .mean-container .mean-nav,
+  .sticky__header.scroll-header .mean-container .mean-nav {
+    margin-top: 0;
+  }
+  .container-fluid .section__title p {
+    width: 69%;
+  }
+  .htc__header__search {
+    margin-right: 109px;
+  }
+
+  .sticky__header.scroll-header .mean-container a.meanmenu-reveal {
+    margin-top: -53px;
+  }
+  .main__menu {
+    gap: 20px;
+  }
+}
+
+/* small mobile :320px. */
+@media (max-width: 767px) {
+  .container {
+    max-width: 90%;
+  }
+  .sticky__header.scroll-header .mean-container .mean-nav,
+  .mean-container .mean-nav {
+    margin-top: 0;
+  }
+
+  .header__top__left li + li {
+    margin-left: 10px;
+  }
+
+  .main__menu > li > a {
+  }
+  .logo {
+    width: 120px;
+  }
+}
+
+/* Mobile menu styles */
+
+.mobile-menu {
+  margin: 0;
+  padding: 10px 0px;
+  transition: height 2s;
+}
+
+.mobile-menu li a {
+  display: block;
+  padding: 10px 0;
+  color: var(--gray-700);
+  text-decoration: none;
+  border-bottom: 1px solid #eee;
+}
+
+.mobile-menu li a:hover {
+  color: var(--primary-500);
+}

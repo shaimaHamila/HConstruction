@@ -1,0 +1,222 @@
+/*---------------------------------------
+  05. Offer Area
+----------------------------------------*/
+
+.offer {
+  display: flex;
+}
+.offer__icon img {
+  max-width: 47px;
+}
+.offer__icon {
+  margin-right: 18px;
+}
+.offer__details p {
+  color: #606060;
+  font-size: 14px;
+  line-height: 24px;
+  padding-right: 29px;
+}
+.offer__details h2 {
+  color: #1f2d30;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.offer.separator {
+  position: relative;
+}
+.offer.separator::before {
+  background: rgba(0, 0, 0, 0) url("/assets/icons/line.png") no-repeat scroll
+    100% 100% / cover;
+  content: "";
+  height: 100%;
+  left: -43px;
+  position: absolute;
+  top: 0;
+  width: 1px;
+}
+
+/*Offer Style 2*/
+.htc__offer__area {
+  position: relative;
+}
+
+.htc__offer__2 .htc__offer__thumb {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 44%;
+}
+.htc__offer__2 .htc__offer__container .offer + .offer {
+  margin-top: 50px;
+}
+.htc__offer__2 .htc__offer__container {
+  padding: 69px 0;
+}
+.htc__offer__2 .offer__details h2 {
+  font-size: 20px;
+  margin-bottom: 3px;
+}
+
+.htc__offer__area.htc__offer--2 {
+  padding-top: 40px;
+}
+.htc__offer--2 .h1__offer__image {
+  position: absolute;
+  right: 3%;
+  top: -65%;
+  width: 31%;
+  max-width: 400px;
+  z-index: 55;
+}
+
+//////////////////////////////////////////////////////////////////////
+
+/* Large screen desktop */
+
+@media (min-width: 1200px) and (max-width: 1500px) {
+  .htc__offer__2 .htc__offer__thumb {
+    width: 49%;
+  }
+  .htc__offer__2 .htc__offer__container .offer + .offer {
+    margin-top: 25px;
+  }
+  .htc__offer__2 .htc__offer__container {
+    padding: 46px 0;
+  }
+  .htc__mission__container {
+    padding: 58px 0;
+  }
+  .htc__mission__container .single__mission + .single__mission {
+    margin-top: 30px;
+  }
+  .htc__offer__thumb {
+    max-width: 52%;
+  }
+
+  .htc__offer--2 .h1__offer__image {
+    right: 4%;
+    top: -55%;
+    width: 25%;
+  }
+  .h1__countdown .htc__counterup__wrap {
+    padding: 0px;
+  }
+  .h1__service {
+    padding-bottom: 10px;
+    padding-top: 20px;
+  }
+}
+
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .container-fluid .section__title p {
+    width: 52%;
+  }
+
+  .htc__offer__2 .htc__offer__container .offer + .offer {
+    margin-top: 26px;
+  }
+  .htc__offer__2 .htc__offer__container {
+    padding: 50px 0;
+  }
+
+  .htc__offer--2 .h1__offer__image {
+    right: 4%;
+    top: -45%;
+    width: 30%;
+  }
+  .text__shape,
+  .htc__offer__thumb,
+  .newsletter__thumb {
+    display: none;
+  }
+
+  .ht__offr--3 .htc__offer__container {
+    padding: 100px 0;
+  }
+  .ht__offr--3 .htc__offer__container .offer + .offer {
+    margin-top: 0;
+  }
+  .htc__offer__container {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+  .htc__offer__2 .htc__offer__thumb {
+    position: inherit;
+    top: auto;
+    width: 100%;
+    margin-bottom: 30px;
+    bottom: 0;
+  }
+
+  .offer__details p {
+    font-size: 13px;
+  }
+  .offer__icon {
+    margin-right: 10px;
+  }
+
+  .htc__offer--2 .h1__offer__image {
+    right: 4%;
+    top: -30%;
+    width: 30%;
+  }
+}
+
+/* small mobile :320px. */
+@media (max-width: 767px) {
+  .container {
+    width: 300px;
+  }
+
+  .htc__offer--2 .h1__offer__image {
+    display: none;
+  }
+
+  .offer__details p {
+    font-size: 13px;
+  }
+  .offer__details p {
+    padding-right: 0;
+  }
+  .htc__counterup__wrap {
+    text-align: center;
+  }
+  .offer.separator::before {
+    display: none;
+  }
+
+  .htc__offer__2 .htc__offer__thumb {
+    position: inherit;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .htc__mission__area .htc__offer__thumb {
+    bottom: 0;
+    position: inherit;
+    top: auto;
+  }
+
+  .htc__offer__area.htc__offer--2 {
+    padding-top: 70px;
+  }
+  .htc__offer__area.htc__offer--2.pb--120 {
+    padding-bottom: 60px;
+  }
+}
+
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .container {
+    width: 90%;
+  }
+}

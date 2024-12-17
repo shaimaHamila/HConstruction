@@ -1,0 +1,26 @@
+<div class="slider__container">
+    <div class="slider__activation__wrap owl-carousel owl-theme">
+        <div *ngFor="let bgImage of bgImages" class="slide slider__fixed--height slide__align--center"
+            [style.backgroundImage]="'url(' + bgImage + ')'"
+            style="background: rgba(0, 0, 0, 0)  no-repeat scroll 0 0 / cover;" data--black__overlay="6">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <div class="slider__inner">
+                            <h4>SCIENCE 1953</h4>
+                            <h1>WE BUILD THE TRUST</h1>
+                            <p>On the other hand, we denounce with righteous indignation and dislike men who are
+                                so beguiled and demoralized by the charms of pleasure of the moment</p>
+                            <div class="slider__btn">
+                                <a class="htc__btn" href="contact.html">CONTACT US</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="htc__slider__fornt__img">
+                <img src="assets/slider/fornt-img/1.png" alt="slider images">
+            </div>
+        </div>
+    </div>
+</div>

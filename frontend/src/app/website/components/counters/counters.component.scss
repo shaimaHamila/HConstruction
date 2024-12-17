@@ -1,0 +1,44 @@
+/*---------------------------------------
+  13. Counterup Area
+----------------------------------------*/
+
+.htc__counterup__wrap {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+.fact__count span.count {
+  color: #1f2d30;
+  font-size: 40px;
+  font-weight: 700;
+}
+.fact__title h2 {
+  color: #1f2d30;
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 6px;
+  text-transform: uppercase;
+}
+.h1__countdown .htc__callto__action h2 {
+  font-size: 56px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+.h1__countdown .htc__callto__action {
+  padding-bottom: 100px;
+  padding-top: 100px;
+}
+.h1__countdown .htc__call__btn {
+  margin-top: 36px;
+}
+.h1__countdown .htc__callto__action p {
+  width: 65%;
+}
+.h1__countdown .htc__counterup__wrap {
+  height: 145px;
+  padding: 0 157px;
+}
+.counterup__left__thumb {
+  margin-left: -15px;
+  margin-right: 40px;
+}

@@ -1,0 +1,59 @@
+<div>
+    <!-- Start Header Top -->
+    <div class="bg__cat--1">
+        <div class="container">
+            <div class="header__top">
+                <ul class="header__top__left">
+                    <li class="header__top__li">
+                        <fa-icon [icon]="faPhone" class="p-2" /> (+216) 22 258 369
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- End Header Top -->
+    <!-- Start Mainmenu Area -->
+    <div id="sticky-header-with-topbar" [ngClass]="{'sticky__header': true,'scroll-header': scroll > 245}">
+        <div class="container">
+            <div class="menu__container">
+                <!-- Logo Section -->
+
+                <div class="logo">
+                    <a href="#">
+                        <img src="assets/logo/sinply-construction.png" alt="logo image" />
+                    </a>
+                </div>
+
+                <!-- Menu Section -->
+                <div class="main__menu-container">
+                    <nav class="main__menu__nav d-none d-sm-block">
+                        <ul class="main__menu">
+                            <li class=""><a href="#">Home</a></li>
+                            <li class=""><a href="#">Projects</a></li>
+                            <li class="action__btn">
+                                <div class="action__btn">
+                                    <a href="#">Contact US</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- Mobile Menu Trigger -->
+                    <div class="text-right d-block d-sm-none">
+                        <button (click)="toggleMobileMenu()" class="mobile-menu-trigger btn  btn-lg p-0">
+                            <fa-icon [icon]="faBars" size="lg"></fa-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="isMobileMenuOpen" class="mobile-menu">
+                <nav id="mobile_dropdown">
+                    <ul class="dropdown">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Projects</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!-- End Mainmenu Area -->
+</div>

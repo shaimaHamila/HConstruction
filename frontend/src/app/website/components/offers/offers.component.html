@@ -1,0 +1,21 @@
+<section class="htc__offer__area htc__offer--2 pb--120 bg__gray">
+    <div class="container">
+        <div class="row">
+            <div *ngFor="let offer of offers; let i = index" class="col-md-4 col-lg-4 col-sm-6 col-xs-12"
+                [ngClass]="{'xmt-40': i > 0, 'hidden-sm': i === 2}">
+                <div class="offer" [ngClass]="{'separator': i > 0}">
+                    <div class="offer__icon">
+                        <img [src]="offer.icon" alt="icon images" />
+                    </div>
+                    <div class="offer__details">
+                        <h2><a href="#">{{ offer.title }}</a></h2>
+                        <p>{{ offer.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="h1__offer__image">
+        <img src="/assets/others/3.png" alt="offer image" />
+    </div>
+</section>

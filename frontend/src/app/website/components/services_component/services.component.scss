@@ -16,6 +16,9 @@
 .service__thumb a img {
   width: 100%;
 }
+.service__images {
+  border-radius: 0.25rem;
+}
 .service__thumb {
   position: relative;
 }
@@ -76,9 +79,6 @@
   opacity: 1;
 }
 
-.container-fluid .section__title p {
-  width: 34%;
-}
 /*Service Page*/
 
 .service__page .service {
@@ -100,7 +100,11 @@
 ////////////////////////////////////////////////////////////
 
 /* Large screen desktop */
-
+@media (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
+}
 @media (min-width: 1170px) and (max-width: 1500px) {
   .container-fluid .section__title p {
     width: 48%;
@@ -206,14 +210,6 @@
   }
 
   .section__title h2.title__line {
-    font-size: 25px;
-  }
-
-  .htc__bst__construc .section__title h2.title__line {
-    font-size: 18px;
-  }
-
-  .htc__testimonial__left h2.title__line {
     font-size: 25px;
   }
 

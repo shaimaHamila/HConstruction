@@ -96,7 +96,11 @@
 /*-----------------------------
   Dropdown Menu
 --------------------------------*/
-
+@media (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
+}
 @media (min-width: 1170px) {
   .main__menu {
     gap: 30px;

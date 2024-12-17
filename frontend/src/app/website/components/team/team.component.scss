@@ -44,9 +44,10 @@
 .team__details {
   background: #1f2d30 none repeat scroll 0 0;
   border-top: 1px solid #ffffff;
-  padding: 23px 0;
+  padding: 23px 4px;
   text-align: center;
   transition: all 0.5s ease 0s;
+  border-radius: 0.25rem;
 }
 .team__details h2 a {
   color: #ffffff;
@@ -116,6 +117,7 @@
   left: 128px;
   position: absolute;
   top: 50%;
+  z-index: 0;
 }
 .text__shape h2 {
   color: #f7f7f7;
@@ -125,4 +127,105 @@
   letter-spacing: 15px;
   writing-mode: vertical-rl;
   transform: rotate(180deg) translateY(50%) translateX(0);
+}
+//////////
+
+.section__title h2.title__line {
+  color: #1f2d30;
+  font-size: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.section__title p {
+  color: #606060;
+  margin: 21px auto 20px;
+  width: 57%;
+}
+//////////////////////////////////////////////////////////
+
+/* Large screen desktop */
+@media (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
+}
+@media (min-width: 1170px) and (max-width: 1500px) {
+  .text__shape {
+    left: 12px;
+  }
+  .text__shape h2 {
+    font-size: 60px;
+    letter-spacing: 5px;
+  }
+}
+
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1169px) {
+  .container-fluid .section__title p {
+    width: 52%;
+  }
+  .text__shape {
+    display: none;
+  }
+  .section__title p {
+    width: 54%;
+  }
+}
+
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+  .text__shape {
+    display: none;
+  }
+  .section__title p {
+    width: 69%;
+  }
+  .team__details h2 a {
+    font-size: 14px;
+  }
+  .team__details h4 {
+    font-size: 14px;
+  }
+}
+
+/* small mobile :320px. */
+@media (max-width: 767px) {
+  .container {
+    width: 300px;
+  }
+
+  .team__thumb img {
+    width: 100%;
+  }
+  .text__shape {
+    display: none;
+  }
+  .section__title p {
+    margin: 21px auto 10px;
+  }
+  .section__title p {
+    width: 100%;
+  }
+  .section__title h2.title__line {
+    font-size: 25px;
+  }
+  .team__details h2 a {
+    font-size: 14px;
+  }
+  .team__details h4 {
+    font-size: 14px;
+  }
+}
+
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .container {
+    width: 90%;
+  }
+  .team__details h2 a {
+    font-size: 16px;
+  }
+  .team__details h4 {
+    font-size: 16px;
+  }
 }

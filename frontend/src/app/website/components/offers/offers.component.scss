@@ -76,7 +76,11 @@
 //////////////////////////////////////////////////////////////////////
 
 /* Large screen desktop */
-
+@media (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
+}
 @media (min-width: 1200px) and (max-width: 1500px) {
   .htc__offer__2 .htc__offer__thumb {
     width: 49%;

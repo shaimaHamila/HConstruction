@@ -1,0 +1,48 @@
+generator client {
+  provider = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x", "linux-musl-openssl-3.0.x"]
+}
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model user {
+  id           Int       @id @default(autoincrement())
+  email        String    @unique
+  password     String
+  firstName    String?
+  lastName     String?
+  phone        String?
+  createdProjects   project[] @relation("CreatedProjects")
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  deletedAt    DateTime?
+}
+
+model project {
+  id          Int       @id @default(autoincrement())
+  name        String
+  clientName  String?
+  location    String?    
+  surfaceArea Float?     
+  sector      String?
+  description String?
+  images      String[]   
+
+  createdById Int?      
+   createdBy user?  @relation("CreatedProjects", fields: [createdById], references: [id]) 
+
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
+}
+model Contact {
+  id          Int       @id @default(autoincrement())
+  name        String    
+  email       String    
+  subject     String    
+  message     String    
+  phone       String?   
+  createdAt   DateTime  @default(now())
+}

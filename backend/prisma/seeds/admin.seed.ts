@@ -1,0 +1,23 @@
+import { Encrypt } from "../../src/helpers/encrypt";
+
+export const InitAdmin = async (prismaClient: any) => {
+  const password = await Encrypt.encryptpass("123456");
+
+  const adminEmail = "admin@gmail.com";
+
+  // Create the admin object with all necessary details
+  const admin = {
+    email: adminEmail,
+    firstName: "Shaima",
+    lastName: "Hamila",
+    phone: "22 333 444",
+    password: password,
+  };
+
+  // Use upsert with the required `where` condition
+  await prismaClient.user.upsert({
+    where: { email: adminEmail },
+    update: {},
+    create: admin,
+  });
+};

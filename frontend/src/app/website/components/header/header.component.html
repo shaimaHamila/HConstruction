@@ -19,7 +19,7 @@
                 <!-- Logo Section -->
 
                 <div class="logo">
-                    <a href="#">
+                    <a href="/home">
                         <img src="assets/logo/sinply-construction.png" alt="logo image" />
                     </a>
                 </div>
@@ -28,11 +28,11 @@
                 <div class="main__menu-container">
                     <nav class="main__menu__nav d-none d-sm-block">
                         <ul class="main__menu">
-                            <li class=""><a href="#">Home</a></li>
-                            <li class=""><a href="#">Projects</a></li>
+                            <li class=""><a href="/home">Home</a></li>
+                            <li class=""><a href="/projects">Projects</a></li>
                             <li class="action__btn">
                                 <div class="action__btn">
-                                    <a href="#">Contact US</a>
+                                    <a href="javascript:void(0);" (click)="scrollToContact()">Contact Us</a>
                                 </div>
                             </li>
                         </ul>
@@ -48,8 +48,8 @@
             <div *ngIf="isMobileMenuOpen" class="mobile-menu">
                 <nav id="mobile_dropdown">
                     <ul class="dropdown">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Projects</a></li>
+                        <li><a href="/home">Home</a></li>
+                        <li><a href="/projects">Projects</a></li>
                     </ul>
                 </nav>
             </div>

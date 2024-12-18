@@ -44,4 +44,12 @@ export class SliderComponent implements AfterViewInit {
       $('.slider__activation__wrap').trigger('next.owl.carousel'),
     );
   }
+
+  scrollToContact() {
+    // Scroll to the contact form section
+    const contactSection = document.getElementById('contactUs');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }

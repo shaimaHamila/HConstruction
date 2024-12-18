@@ -11,7 +11,7 @@ import { en_US, NZ_I18N } from 'ng-zorro-antd/i18n';
 import { ProjetManagmentComponent } from './pages/projet-managment/projet-managment.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AdminRoutingModule } from './admin-routing.module';
-import { Router,RouterLink,RouterModule } from '@angular/router';
+import { Router, RouterLink, RouterModule } from '@angular/router';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzDrawerModule } from 'ng-zorro-antd/drawer'; // Import NzDrawerModule
@@ -19,13 +19,9 @@ import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzCardModule } from 'ng-zorro-antd/card';
 
-import { NzFormModule } from 'ng-zorro-antd/form';  
-
-
-
+import { NzFormModule } from 'ng-zorro-antd/form';
 
 import { BrowserModule } from '@angular/platform-browser';
-
 
 @NgModule({
   declarations: [AdminComponent, ProjetManagmentComponent, ContactComponent],
@@ -36,15 +32,15 @@ import { BrowserModule } from '@angular/platform-browser';
     NzLayoutModule,
     NzMenuModule,
     AdminRoutingModule,
-    RouterLink,RouterModule,
+    RouterLink,
+    RouterModule,
     NzTableModule,
-    NzDividerModule, 
-    NzDrawerModule, 
+    NzDividerModule,
+    NzDrawerModule,
     NzGridModule,
     NzInputModule,
     NzCardModule,
-    NzFormModule, 
-    BrowserModule,
+    NzFormModule,
   ],
   exports: [AdminComponent],
   providers: [
@@ -54,5 +50,5 @@ import { BrowserModule } from '@angular/platform-browser';
   ],
 })
 export class AdminModule {
-  constructor (private router : Router){}
+  constructor(private router: Router) {}
 }

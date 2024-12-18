@@ -18,10 +18,8 @@ import { NzDrawerModule } from 'ng-zorro-antd/drawer'; // Import NzDrawerModule
 import { NzGridModule } from 'ng-zorro-antd/grid';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzCardModule } from 'ng-zorro-antd/card';
-
 import { NzFormModule } from 'ng-zorro-antd/form';
-
-import { BrowserModule } from '@angular/platform-browser';
+import { NzIconModule } from 'ng-zorro-antd/icon';
 
 @NgModule({
   declarations: [AdminComponent, ProjetManagmentComponent, ContactComponent],
@@ -41,6 +39,7 @@ import { BrowserModule } from '@angular/platform-browser';
     NzInputModule,
     NzCardModule,
     NzFormModule,
+    NzIconModule,
   ],
   exports: [AdminComponent],
   providers: [

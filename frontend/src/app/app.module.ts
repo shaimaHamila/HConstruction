@@ -10,7 +10,7 @@ import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { provideHttpClient } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 
 import { AdminModule } from './admin/admin.module';
 import { NzCardModule } from 'ng-zorro-antd/card';
@@ -29,6 +29,7 @@ registerLocaleData(en);
     FontAwesomeModule,
     NzCardModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },

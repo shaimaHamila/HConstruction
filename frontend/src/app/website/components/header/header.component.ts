@@ -16,10 +16,16 @@ export class HeaderComponent {
   }
   @HostListener('window:scroll', [])
   onWindowScroll(): void {
-    this.scroll =
-      window.scrollY ||
-      document.documentElement.scrollTop ||
-      document.body.scrollTop ||
-      0;
+    // Directly use window.scrollY for better accuracy
+    this.scroll = window.scrollY;
+    console.log('Current scroll position:', this.scroll); // Debugging the scroll value
+  }
+
+  scrollToContact() {
+    // Scroll to the contact form section
+    const contactSection = document.getElementById('contactUs');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 }

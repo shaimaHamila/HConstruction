@@ -17,6 +17,10 @@ import { ProjectsComponent } from './components/projects/projects.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+import { WebsiteRoutingModule } from './website-routing.module';
+import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,16 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     ProjectsComponent,
     ContactFormComponent,
   ],
-  imports: [CommonModule, FontAwesomeModule, NzButtonModule],
+  imports: [
+    CommonModule,
+    FontAwesomeModule,
+    NzButtonModule,
+    WebsiteRoutingModule,
+    RouterModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+  ],
   exports: [HomeComponent, WebsiteComponent],
 })
 export class WebsiteModule {}

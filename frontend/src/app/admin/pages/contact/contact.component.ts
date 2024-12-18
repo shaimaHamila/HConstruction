@@ -1,72 +1,94 @@
-import { Component } from '@angular/core';
-import { NzButtonModule } from 'ng-zorro-antd/button';
-import { NzDrawerModule } from 'ng-zorro-antd/drawer';
-import { NzFormModule } from 'ng-zorro-antd/form';
-import { NzInputModule } from 'ng-zorro-antd/input';
-import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
+import { Component, OnInit } from '@angular/core';
 import { NzMessageService } from 'ng-zorro-antd/message';
+import { ContactService } from '../../../core/services/contact/contact.service';
+export interface Contact {
+  id: number;
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+  phone: string;
+  createdAt: string; // You may want to use `Date` instead of `string` if you plan to manipulate dates
+}
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
-  
+  styleUrls: ['./contact.component.scss'],
 })
-export class ContactComponent {
-  visible = false;
-  editVisible = false;
-  selectedContact: any = null;
+export class ContactComponent implements OnInit {
+  visible = false; // For view drawer
+  editVisible = false; // For edit drawer
+  selectedContact: Contact | null = null; // Selected contact for viewing/editing
+  dataSet: Contact[] = []; // Typed dataSet array to hold the contact data
 
-  dataSet = [
-    {
-      name: 'John Doe',
-      email: 'john.doe@example.com',
-      subject: 'Feedback',
-      message: 'This is a feedback message.',
-      phone: '123-456-7890',
-      createdAt: new Date('2024-12-01'),
-    },
-    {
-      name: 'Jane Smith',
-      email: 'jane.smith@example.com',
-      subject: 'Inquiry',
-      message: 'This is an inquiry message.',
-      phone: '987-654-3210',
-      createdAt: new Date('2024-12-05'),
-    },
-  ];
+  constructor(
+    private message: NzMessageService,
+    private contactService: ContactService, // Inject the service
+  ) {}
 
-  constructor(private message: NzMessageService) {}
+  ngOnInit(): void {
+    this.loadContacts(); // Load contacts on component initialization
+  }
 
-  onView(contact: any) {
+  loadContacts(): void {
+    this.contactService.getContactMessages().subscribe(
+      (response) => {
+        if (response.succss) {
+          this.dataSet = response.data; // Type-safe assignment
+        }
+      },
+      (error) => {
+        this.message.error('Failed to load messages');
+      },
+    );
+  }
+
+  // Show the contact details in the view drawer
+  onView(contact: Contact) {
     this.selectedContact = contact;
     this.visible = true;
   }
 
-  onEdit(contact: any) {
-    this.selectedContact = { ...contact }; // Copy the contact data to the edit form
-    this.editVisible = true;
-  }
-
+  // Close the view drawer
   closeViewDrawer(): void {
     this.visible = false;
   }
 
+  // Open the edit drawer with the selected contact
+  onEdit(contact: Contact) {
+    this.selectedContact = { ...contact }; // Create a copy to prevent direct mutation
+    this.editVisible = true;
+  }
+
+  // Close the edit drawer
   closeEditDrawer(): void {
     this.editVisible = false;
   }
 
-  onSubmitEdit(): void {
-    console.log('Updated contact:', this.selectedContact);
-    const index = this.dataSet.findIndex(item => item.email === this.selectedContact.email);
-    if (index > -1) {
-      this.dataSet[index] = { ...this.selectedContact }; // Update the contact in the list
-    }
-    this.editVisible = false;
-    this.message.success('Contact updated successfully!');
+  // Save the edited contact
+  onSaveEdit(): void {
+    this.contactService.submitContactMessage(this.selectedContact).subscribe(
+      (response) => {
+        this.message.success('Message updated successfully');
+        this.loadContacts(); // Reload the list after saving
+        this.closeEditDrawer();
+      },
+      (error) => {
+        this.message.error('Failed to update the message');
+      },
+    );
   }
 
-  onDelete(contact: any) {
-    this.dataSet = this.dataSet.filter(item => item !== contact);
+  // Delete a contact message
+  onDelete(contact: Contact) {
+    this.contactService.deleteContactMessage(contact?.id.toString()).subscribe(
+      (response) => {
+        this.message.success('Message deleted successfully');
+        this.loadContacts(); // Reload the list after deletion
+      },
+      (error) => {
+        this.message.error('Failed to delete the message');
+      },
+    );
   }
-
 }

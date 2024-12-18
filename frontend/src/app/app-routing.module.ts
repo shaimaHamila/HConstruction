@@ -1,20 +1,24 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AdminComponent } from './admin/admin.component';
-import { WebsiteComponent } from './website/website.component';
 const routes: Routes = [
-  // Default route, redirects to the website module
-  
-  { path: '', pathMatch: 'full', redirectTo: 'website' },
-  { path: 'admin', component: AdminComponent },
-
-  { path: 'website', component: WebsiteComponent },
-  // Lazy load WebsiteModule
+  //Website
   {
-    path: 'website',
+    path: '',
     loadChildren: () =>
       import('./website/website.module').then((m) => m.WebsiteModule),
   },
+  //login
+  {
+    path: 'login',
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+  },
+  //Admin
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./admin/admin.module').then((m) => m.AdminModule),
+  },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({

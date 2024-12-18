@@ -1,40 +1,43 @@
 <nz-layout class="app-layout">
+    <!-- Sidebar with Project Management and Contact menu items -->
     <nz-sider class="menu-sidebar" nzCollapsible nzWidth="256px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed"
         [nzTrigger]="null">
         <div class="sidebar-logo">
-            <a href="https://ng.ant.design/" target="_blank">
-                
-                    <a href="#">
-                        <img src="assets/logo/sinply-construction.png" alt="logo image" />
-                    </a>
-                  
-                <h1>SIMPLY CONSTRUCTION</h1>
-            </a>
+            <h1>Admin Dashboard</h1>
         </div>
         <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-            <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
-                <ul>
-                    <li nz-menu-item nzMatchRouter>
-                        <a routerLink="/admin/project-management" routerLinkActive="active">Project Management</a>
-                    </li>
-                    <li nz-menu-item nzMatchRouter>
-                      <a routerLink="/admin/contact" routerLinkActive="active">Contact</a>
-                    </li>
-                </ul>
-            </li>   
+            <!-- Project Management as a top-level menu item -->
+            <li nz-menu-item nzMatchRouter>
+                <a routerLink="/admin/project-management" routerLinkActive="active">Project Management</a>
+            </li>
+            <!-- Contact as a top-level menu item -->
+            <li nz-menu-item nzMatchRouter>
+                <a routerLink="/admin/contact" routerLinkActive="active">Contact</a>
+            </li>
+            <!-- Logout option -->
+            <li nz-menu-item (click)="logout()">
+                <a>Logout</a>
+            </li>
         </ul>
     </nz-sider>
+
     <nz-layout>
         <nz-header>
             <div class="app-header">
+                <!-- Button to collapse/expand sidebar -->
                 <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
                     <span class="trigger" nz-icon></span>
                 </span>
+                <!-- Displaying the current page name in the header -->
+                <!-- <div class="header-title">
+                    <h2>{{ pageName }}</h2>
+                </div> -->
             </div>
         </nz-header>
+
         <nz-content>
             <div class="inner-content">
-                <router-outlet></router-outlet> 
+                <router-outlet></router-outlet>
             </div>
         </nz-content>
     </nz-layout>

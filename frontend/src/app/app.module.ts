@@ -14,7 +14,7 @@ import { HttpClientModule, provideHttpClient } from '@angular/common/http';
 
 import { AdminModule } from './admin/admin.module';
 import { NzCardModule } from 'ng-zorro-antd/card';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthModule } from './auth/auth.module';
 import { RouterModule } from '@angular/router';
 registerLocaleData(en);
@@ -30,6 +30,7 @@ registerLocaleData(en);
     NzCardModule,
     FormsModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },

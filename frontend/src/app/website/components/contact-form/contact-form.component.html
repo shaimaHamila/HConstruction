@@ -10,27 +10,43 @@
             </div>
 
             <!-- Form -->
-            <form id="contact-form">
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
                 <div class="clint__comment__form">
                     <div class="single__cl__form">
-                        <input name="name" type="text" placeholder="Name">
-                        <input name="email" type="email" placeholder="Email">
+
+                        <div style="display: flex; flex-direction: column;width: 100%;">
+                            <input formControlName="name" type="text" placeholder="Name">
+                            <div *ngIf="contactForm.controls['name'].invalid && contactForm.controls['name'].touched"
+                                class="error-message">
+                                Name is required.
+                            </div>
+                        </div>
+                        <div style="display: flex; flex-direction: column;width: 100%;">
+                            <input formControlName="email" type="email" placeholder="Email">
+                            <div *ngIf="contactForm.controls['email'].invalid && contactForm.controls['email'].touched"
+                                class="error-message">
+                                Valid email is required.
+                            </div>
+                        </div>
+
                     </div>
                     <div class="single__cl__form">
-                        <input name="telephone" type="tel" placeholder="Phone">
-                        <input name="subject" type="text" placeholder="Subject">
+                        <input formControlName="phone" type="tel" placeholder="Phone">
+                        <input formControlName="subject" type="text" placeholder="Subject">
                     </div>
                     <div class="single__cl__message">
-                        <textarea name="message" placeholder="Message"></textarea>
+                        <textarea formControlName="message" placeholder="Message"></textarea>
                     </div>
                     <div class="clint__submit__btn">
                         <div class="action__btn">
-                            <a href="#">Send message</a>
+                            <button nz-button nzType="primary" [disabled]="contactForm.invalid" type="submit">
+                                Send message
+                            </button>
                         </div>
                     </div>
                 </div>
             </form>
-            <p class="form-messege"></p>
+            <p class="form-message">{{ formMessage }}</p>
         </div>
     </div>
 </section>

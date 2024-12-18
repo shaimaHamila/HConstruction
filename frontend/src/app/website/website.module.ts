@@ -19,6 +19,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { WebsiteRoutingModule } from './website-routing.module';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,9 @@ import { RouterModule } from '@angular/router';
     NzButtonModule,
     WebsiteRoutingModule,
     RouterModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   exports: [HomeComponent, WebsiteComponent],
 })

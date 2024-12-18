@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import prisma from "../prisma";
 import { Responses } from "../helpers/responses";
 import { ProjectValidator } from "../validators/ProjectValidator"; // Define validations
+import { getCurrentUser } from "./authController";
 
 // Create a project
 export const createProject = async (req: Request, res: Response) => {
@@ -10,6 +11,18 @@ export const createProject = async (req: Request, res: Response) => {
   if (error) {
     console.error("Validation error during project creation:", error);
     return Responses.ValidationBadRequest(res, error);
+  }
+
+  // Get the current user's ID from the decoded token
+  const createdById = res.locals.decodedToken.id;
+
+  let user;
+  try {
+    // Verify the current user exists
+    user = await getCurrentUser(parseInt(createdById, 10)); // Assuming user service exists for fetching the user by ID
+  } catch (error: any) {
+    console.error("Error while fetching current user:", error);
+    return Responses.BadRequest(res, "User not found.");
   }
 
   try {
@@ -21,10 +34,8 @@ export const createProject = async (req: Request, res: Response) => {
       sector,
       description,
       images,
-      createdById,
     } = req.body;
 
-    // Create the project
     const project = await prisma.project.create({
       data: {
         name,
@@ -38,7 +49,7 @@ export const createProject = async (req: Request, res: Response) => {
       },
     });
 
-    return Responses.CreateSuccess(res, project); // Updated for create success response
+    return Responses.CreateSuccess(res, project);
   } catch (error) {
     console.error("Error during project creation:", error);
     return Responses.InternalServerError(res, "Failed to create project.");

@@ -6,12 +6,13 @@ import {
   updateProject,
   deleteProject,
 } from "../controllers/projectController";
+import { authentication } from "../middlewares/authMiddleware";
 
 const ProjectRouter = express.Router();
 
-ProjectRouter.post("/", createProject);
+ProjectRouter.post("/", authentication, createProject);
 ProjectRouter.get("/", getProjects);
 ProjectRouter.get("/:id", getProjectById);
-ProjectRouter.put("/:id", updateProject);
-ProjectRouter.delete("/:id", deleteProject);
+ProjectRouter.put("/:id", authentication, updateProject);
+ProjectRouter.delete("/:id", authentication, deleteProject);
 export default ProjectRouter;

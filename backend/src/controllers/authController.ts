@@ -60,3 +60,15 @@ export const login = async (req: Request, res: Response) => {
     return Responses.InternalServerError(res, "Internal server error.");
   }
 };
+export const getCurrentUser = async (id: number) => {
+  // Fetch user by ID to verify they exist
+  const user = await prisma.user.findUnique({
+    where: { id },
+  });
+
+  if (!user) {
+    throw new Error("User not found");
+  }
+
+  return user;
+};

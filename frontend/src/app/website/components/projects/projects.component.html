@@ -21,13 +21,13 @@
             <div class="col-md-5 col-lg-5 first-project col-xs-12" *ngIf="projects.length > 0">
                 <div class="project__itm foo">
                     <div class="project__thumb">
-                        <a [href]="projects[0].link">
+                        <a>
                             <img [src]="projects[0].imageUrl" alt="Big Project" />
                         </a>
                         <div class="project__hover__info">
                             <div class="project__action">
                                 <h2>
-                                    <a [href]="projects[0].link">{{ projects[0].title }}</a>
+                                    <a>{{ projects[0].title }}</a>
                                 </h2>
                                 <h4>DURATION : {{ projects[0].duration }}</h4>
                             </div>
@@ -42,13 +42,13 @@
                     <div class="col-md-6 col-sm-6 col-xs-12" *ngFor="let project of projects.slice(1); let i = index">
                         <div class="project__itm foo">
                             <div class="project__thumb">
-                                <a [href]="project.link">
+                                <a>
                                     <img [src]="project.imageUrl" [alt]="'Project ' + (i + 2)" />
                                 </a>
                                 <div class="project__hover__info">
                                     <div class="project__action">
                                         <h2>
-                                            <a [href]="project.link">{{ project.title }}</a>
+                                            <a>{{ project.title }}</a>
                                         </h2>
                                         <h4>DURATION : {{ project.duration }}</h4>
                                     </div>

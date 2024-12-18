@@ -1,118 +1,29 @@
+<h3 nz-typography>Contact Messages</h3>
 <nz-table #basicTable [nzBordered]="true" [nzData]="dataSet" [nzSize]="'middle'">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Subject</th>
-        <th>Message</th>
-        <th>Phone</th>
-        <th>Created At</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let contact of dataSet">
-        <td>{{ contact.name }}</td>
-        <td>{{ contact.email }}</td>
-        <td>{{ contact.subject }}</td>
-        <td>{{ contact.message }}</td>
-        <td>{{ contact.phone }}</td>
-        <td>{{ contact.createdAt | date }}</td>
-        <td>
-          <a (click)="onView(contact)">View</a>
-          <nz-divider nzType="vertical"></nz-divider>
-        
-          <a (click)="onDelete(contact)">Delete</a>
-        </td>
-      </tr>
-    </tbody>
-  </nz-table>
-  
- <!-- View Drawer -->
-<nz-drawer
-[nzVisible]="visible"
-[nzTitle]="'Contact Details'"
-[nzWidth]="720"
-[nzBodyStyle]="{ overflow: 'auto' }"
-(nzOnClose)="closeViewDrawer()"
->
-<div *ngIf="selectedContact">
-  <p><strong>Name:</strong> {{ selectedContact.name }}</p>
-  <p><strong>Email:</strong> {{ selectedContact.email }}</p>
-  <p><strong>Subject:</strong> {{ selectedContact.subject }}</p>
-  <p><strong>Message:</strong> {{ selectedContact.message }}</p>
-  <p><strong>Phone:</strong> {{ selectedContact.phone || 'N/A' }}</p>
-  <p><strong>Created At:</strong> {{ selectedContact.createdAt | date }}</p>
-</div>
-</nz-drawer>
-
-  
-  <!-- Edit Drawer -->
-  <nz-drawer
-    [nzVisible]="editVisible"
-    [nzTitle]="'Edit Contact'"
-    [nzWidth]="720"
-    [nzBodyStyle]="{ overflow: 'auto' }"
-    (nzOnClose)="closeEditDrawer()"
-  >
-    <form nz-form *nzDrawerContent>
-      <div nz-row [nzGutter]="16">
-        <div nz-col nzSpan="12">
-          <nz-form-item>
-            <nz-form-label [nzSpan]="7">Name</nz-form-label>
-            <nz-form-control [nzSpan]="17">
-              <input nz-input [(ngModel)]="selectedContact.name" name="name" />
-            </nz-form-control>
-          </nz-form-item>
-        </div>
-        <div nz-col nzSpan="12">
-          <nz-form-item>
-            <nz-form-label [nzSpan]="7">Email</nz-form-label>
-            <nz-form-control [nzSpan]="17">
-              <input nz-input [(ngModel)]="selectedContact.email" name="email" />
-            </nz-form-control>
-          </nz-form-item>
-        </div>
-      </div>
-  
-      <div nz-row [nzGutter]="16">
-        <div nz-col nzSpan="12">
-          <nz-form-item>
-            <nz-form-label [nzSpan]="7">Subject</nz-form-label>
-            <nz-form-control [nzSpan]="17">
-              <input nz-input [(ngModel)]="selectedContact.subject" name="subject" />
-            </nz-form-control>
-          </nz-form-item>
-        </div>
-        <div nz-col nzSpan="12">
-          <nz-form-item>
-            <nz-form-label [nzSpan]="7">Phone</nz-form-label>
-            <nz-form-control [nzSpan]="17">
-              <input nz-input [(ngModel)]="selectedContact.phone" name="phone" />
-            </nz-form-control>
-          </nz-form-item>
-        </div>
-      </div>
-  
-      <div nz-row [nzGutter]="16">
-        <div nz-col nzSpan="24">
-          <nz-form-item>
-            <nz-form-label [nzSpan]="7">Message</nz-form-label>
-            <nz-form-control [nzSpan]="17">
-              <textarea nz-input [(ngModel)]="selectedContact.message" name="message" [nzAutosize]="{ minRows: 4, maxRows: 6 }"></textarea>
-            </nz-form-control>
-          </nz-form-item>
-        </div>
-      </div>
-  
-      
-  
-      <ng-template #footerTpl>
-        <div style="float: right">
-          <button nz-button style="margin-right: 8px;" (click)="closeEditDrawer()">Cancel</button>
-          <button nz-button nzType="primary" (click)="onSubmitEdit()">Submit</button>
-        </div>
-      </ng-template>
-    </form>
-  </nz-drawer>
-  
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Subject</th>
+      <th>Message</th>
+      <th>Phone</th>
+      <th>Created At</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let contact of dataSet">
+      <td>{{ contact?.name }}</td>
+      <td>{{ contact?.email }}</td>
+      <td>{{ contact?.subject }}</td>
+      <td>{{ contact?.message }}</td>
+      <td>{{ contact?.phone }}</td>
+      <td>{{ contact?.createdAt | date }}</td>
+      <td>
+        <a (click)="onView(contact)">View</a>
+        <nz-divider nzType="vertical"></nz-divider>
+        <a (click)="onDelete(contact)">Delete</a>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>

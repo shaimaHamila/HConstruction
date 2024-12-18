@@ -13,6 +13,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { provideHttpClient } from '@angular/common/http';
 
 import { AdminModule } from './admin/admin.module';
+import { NzCardModule } from 'ng-zorro-antd/card';
+import { FormsModule } from '@angular/forms';
 registerLocaleData(en);
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +24,8 @@ registerLocaleData(en);
     WebsiteModule,
     AdminModule,
     FontAwesomeModule,
+    NzCardModule,  
+    FormsModule, 
   ],
   providers: [
     { provide: NZ_I18N, useValue: en_US },

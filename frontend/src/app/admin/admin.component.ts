@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Router,RouterLink,RouterModule } from '@angular/router';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',

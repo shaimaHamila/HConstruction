@@ -79,12 +79,16 @@ export class ContactComponent implements OnInit {
     );
   }
 
-  // Delete a contact message
   onDelete(contact: Contact) {
     this.contactService.deleteContactMessage(contact?.id.toString()).subscribe(
       (response) => {
-        this.message.success('Message deleted successfully');
-        this.loadContacts(); // Reload the list after deletion
+        if (response.success) {
+          // Ensure response indicates success
+          this.message.success('Message deleted successfully');
+          this.loadContacts(); // Reload the list after deletion
+        } else {
+          this.message.error('Failed to delete the message on the server');
+        }
       },
       (error) => {
         this.message.error('Failed to delete the message');
